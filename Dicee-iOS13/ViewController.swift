@@ -19,11 +19,8 @@ class ViewController: UIViewController {
     
     @IBAction func onRollButtonClick(_ sender: UIButton) {
         let diceList = [#imageLiteral(resourceName: "DiceOne"),#imageLiteral(resourceName: "DiceTwo"),#imageLiteral(resourceName: "DiceThree"),#imageLiteral(resourceName: "DiceFour"),#imageLiteral(resourceName: "DiceFive"),#imageLiteral(resourceName: "DiceSix")]
-        let diceListSize = diceList.count-1
-        let randomIndexDice1 = Int.random(in: 0...diceListSize)
-        let randomIndexDice2 = Int.random(in: 0...diceListSize)
-        diceImageView1.image = diceList[randomIndexDice1]
-        diceImageView2.image = diceList[randomIndexDice2]
+        diceImageView1.image = diceList.randomElement()!
+        diceImageView2.image = diceList.randomElement()!
     }
 }
 
